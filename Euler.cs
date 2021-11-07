@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MetodosNumericos
 {
@@ -45,6 +46,7 @@ namespace MetodosNumericos
             this.x2 = 0;
             this.h = 0.05;
             this.iteracion = 0;
+            this.contador = 0;
             this.aleatorio = new Random();
             this.valoresX1 = new List<double>();
             this.valoresX2 = new List<double>();
@@ -65,10 +67,8 @@ namespace MetodosNumericos
 
         private void procesar(double a,double b,double c,DataTable tabla)
         {
-            contador = 0;
-
             DataRow row;
-            while (tiempo < 10)
+            while (true)
             {
                 tiempo += h;
                 x1 +=  h * x2;
@@ -83,6 +83,11 @@ namespace MetodosNumericos
 
                 derivadaX2 = (-b) * x1 - a * x2 + Math.Exp(-c * tiempo) ;
 
+                if (x2 < 0 && lineaAnterior[2] > 0)
+                {
+                    contador++;
+                }
+
                 lineaActual[0] = tiempo;
                 lineaActual[1] = x1;
                 lineaActual[2] = x2;
@@ -95,14 +100,19 @@ namespace MetodosNumericos
                 valoresDerivadaX2.Add(derivadaX2);
                 tiempos.Add(tiempo);
 
-                lineaAnterior = lineaActual;
-
                 row = tabla.NewRow();
-                for (int j =0;j< lineaActual.Length; j++)
+                for (int j = 0; j < lineaActual.Length; j++)
                 {
                     row[j] = truncador.truncar(lineaActual[j]);
                 }
                 tabla.Rows.Add(row);
+
+                if (contador == 2)
+                {
+                    MessageBox.Show("Segundo pico en t= ", truncador.truncar(tiempo).ToString());
+                    break;
+                }
+                lineaAnterior = lineaActual;
             }
         }
 

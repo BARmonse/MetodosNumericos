@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MetodosNumericos
 {
@@ -36,6 +37,7 @@ namespace MetodosNumericos
         private double contador;
 
         private double[] lineaActual;
+        private double[] lineaAnterior;
 
         private List<double> valoresX1;
         private List<double> valoresX2;
@@ -52,6 +54,7 @@ namespace MetodosNumericos
             this.iteracion = 0;
             this.aleatorio = new Random();
             this.lineaActual = new double[11];
+            this.lineaAnterior = new double[11];
             this.valoresX1 = new List<double>();
             this.valoresX2 = new List<double>();
             this.tiempos = new List<double>();
@@ -74,7 +77,7 @@ namespace MetodosNumericos
             contador = 0;
             DataRow row;
 
-            while (tiempo < 10)
+            while (true)
             {
                 if (iteracion == 0)
                 {
@@ -96,6 +99,11 @@ namespace MetodosNumericos
                 l3 = h * (Math.Exp(-c * (tiempo + 0.5 * h)) - a * (x2 + 0.5 * l2) - b * (x1 + 0.5 * k2));
                 k4 = h * (x2 + l3);
                 l4 = h * (Math.Exp(-c * (tiempo + h)) - a * (x2 +  l3) - b * (x1 + k3));
+
+                if (x2 < 0 && lineaAnterior[6] > 0)
+                {
+                    contador++;
+                }
 
                 lineaActual[0] = tiempo;
                 lineaActual[1] = x1;
@@ -121,6 +129,14 @@ namespace MetodosNumericos
                     row[j] = truncador.truncar(lineaActual[j]);
                 }
                 tabla.Rows.Add(row);
+
+                if (contador == 2)
+                {
+                    MessageBox.Show("Segundo pico en t= ", truncador.truncar(tiempo).ToString());
+                    break;
+                }
+
+                lineaAnterior = lineaActual;
             }
         }
 
