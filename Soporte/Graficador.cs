@@ -53,7 +53,6 @@ namespace MetodosNumericos.Soporte
             plt.AxisAutoX();
             plt.AxisAutoY();
             plt.Grid(false, lineStyle: ScottPlot.LineStyle.Dot);
-
             Random random = new Random();
             string rand = random.Next().ToString();
             string imagePath = "C:\\\\Users\\" + Environment.UserName.ToString() + "\\histograma" + rand + ".png";
