@@ -109,8 +109,8 @@ namespace MetodosNumericos
 
                 if (contador == 2)
                 {
-                    MessageBox.Show("Segundo pico en t= ", truncador.truncar(tiempo).ToString());
-                    break;
+                   MessageBox.Show("Segundo pico en t= ", truncador.truncar(tiempos[tiempos.Count - 2]).ToString());
+                   break;
                 }
                 lineaAnterior = lineaActual;
             }
@@ -130,6 +130,8 @@ namespace MetodosNumericos
             Graficador graficador = new Graficador();
             graficador.puntosAbscisa = this.tiempos.ToArray();
             graficador.puntosOrdenada = this.valoresX1.ToArray();
+            graficador.xlabel = "Tiempo(s)";
+            graficador.ylabel = "X1";
             graficador.Show();
         }
 
@@ -138,6 +140,8 @@ namespace MetodosNumericos
             Graficador graficador = new Graficador();
             graficador.puntosAbscisa = this.tiempos.ToArray();
             graficador.puntosOrdenada = this.valoresX2.ToArray();
+            graficador.xlabel = "Tiempo(s)";
+            graficador.ylabel = "X2";
             graficador.Show();
         }
 
@@ -146,6 +150,8 @@ namespace MetodosNumericos
             Graficador graficador = new Graficador();
             graficador.puntosAbscisa = this.tiempos.ToArray();
             graficador.puntosOrdenada = this.valoresDerivadaX2.ToArray();
+            graficador.xlabel = "Tiempo(s)";
+            graficador.ylabel = "X2'";
             graficador.Show();
         }
         public void graficarDerivadaSegundaFuncionX()
@@ -153,6 +159,8 @@ namespace MetodosNumericos
             Graficador graficador = new Graficador();
             graficador.puntosAbscisa = this.valoresX1.ToArray();
             graficador.puntosOrdenada = this.valoresDerivadaX2.ToArray();
+            graficador.xlabel = "X1";
+            graficador.ylabel = "X2'";
             graficador.Show();
         }
         public void graficarDerivadaFuncionX()
@@ -160,6 +168,8 @@ namespace MetodosNumericos
             Graficador graficador = new Graficador();
             graficador.puntosAbscisa = this.valoresX1.ToArray();
             graficador.puntosOrdenada = this.valoresX2.ToArray();
+            graficador.xlabel = "X1";
+            graficador.ylabel = "X2";
             graficador.Show();
         }
         public void graficarDerivadaSegundaFuncionDerivada()
@@ -167,6 +177,8 @@ namespace MetodosNumericos
             Graficador graficador = new Graficador();
             graficador.puntosAbscisa = this.valoresX2.ToArray();
             graficador.puntosOrdenada = this.valoresDerivadaX2.ToArray();
+            graficador.xlabel = "X2";
+            graficador.ylabel = "X2'";
             graficador.Show();
         }
     }

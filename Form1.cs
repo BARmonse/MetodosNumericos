@@ -31,6 +31,7 @@ namespace MetodosNumericos
         }
         private void tomarDatos()
         {
+            if (double.Parse(limInferiorA.Text) > double.Parse(limSuperiorA.Text) || double.Parse(limInferiorA.Text) < 0.5 || double.Parse(limSuperiorA.Text) > 2) { return; }
             inferiorA = double.Parse(limInferiorA.Text);
             superiorA = double.Parse(limSuperiorA.Text);
             b = double.Parse(constanteB.Text);
@@ -96,10 +97,6 @@ namespace MetodosNumericos
             {
                 metodoEuler.graficarDerivadaSegundaFuncionX();
             }
-            if (rbRungeKutta.Checked)
-            {
-                metodoRungeKutta.graficarDerivadaSegundaFuncionX();
-            }
         }
 
         private void btnGraficarDerivadaFuncionX_Click(object sender, EventArgs e)
@@ -107,6 +104,10 @@ namespace MetodosNumericos
             if (rbEuler.Checked)
             {
                 metodoEuler.graficarDerivadaFuncionX();
+            }
+            if (rbRungeKutta.Checked)
+            {
+                metodoRungeKutta.graficarDerivadaFuncionX();
             }
         }
 

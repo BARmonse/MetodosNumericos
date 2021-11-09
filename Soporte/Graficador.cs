@@ -13,6 +13,8 @@ namespace MetodosNumericos.Soporte
 {
     public partial class Graficador : Form
     {
+        public string xlabel { get; set; }
+        public string ylabel { get; set; }
         public double[] puntosOrdenada { get; set; }
         public double[] puntosAbscisa { get; set; }
         public Graficador()
@@ -43,10 +45,10 @@ namespace MetodosNumericos.Soporte
             //double[] yError = new double[pointCount];
 
             // make the bar plot
-            plt.PlotScatter(xs, y1, color: Color.Magenta);
-            //plt.XLabel("Proyecto");
-            //plt.YLabel("Duración promedio del proyecto(días)");
-            //plt.Legend(location: Alignment.UpperLeft);
+            plt.PlotScatter(xs, y1, color: Color.Red);
+            plt.XLabel(xlabel);
+            plt.YLabel(ylabel);
+            plt.Legend(location: Alignment.UpperLeft);
             // customize the plot to make it look nicer
             plt.AxisAutoX();
             plt.AxisAutoY();

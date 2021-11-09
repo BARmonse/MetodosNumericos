@@ -213,7 +213,7 @@ namespace MetodosNumericos
             this.btnGraficarXFuncionTiempo.Name = "btnGraficarXFuncionTiempo";
             this.btnGraficarXFuncionTiempo.Size = new System.Drawing.Size(153, 40);
             this.btnGraficarXFuncionTiempo.TabIndex = 6;
-            this.btnGraficarXFuncionTiempo.Text = "Graficar X(t)";
+            this.btnGraficarXFuncionTiempo.Text = "Graficar X1(t)";
             this.btnGraficarXFuncionTiempo.UseVisualStyleBackColor = true;
             this.btnGraficarXFuncionTiempo.Click += new System.EventHandler(this.btnGraficarXFuncionTiempo_Click);
             // 
@@ -223,7 +223,7 @@ namespace MetodosNumericos
             this.btnGraficarDerivadaFuncionTiempo.Name = "btnGraficarDerivadaFuncionTiempo";
             this.btnGraficarDerivadaFuncionTiempo.Size = new System.Drawing.Size(153, 39);
             this.btnGraficarDerivadaFuncionTiempo.TabIndex = 7;
-            this.btnGraficarDerivadaFuncionTiempo.Text = "Graficar X\'(t)";
+            this.btnGraficarDerivadaFuncionTiempo.Text = "Graficar X2(t)";
             this.btnGraficarDerivadaFuncionTiempo.UseVisualStyleBackColor = true;
             this.btnGraficarDerivadaFuncionTiempo.Click += new System.EventHandler(this.btnGraficarDerivadaFuncionTiempo_Click);
             // 
@@ -233,7 +233,7 @@ namespace MetodosNumericos
             this.btnGraficarDerivadaSegundaFuncionTiempo.Name = "btnGraficarDerivadaSegundaFuncionTiempo";
             this.btnGraficarDerivadaSegundaFuncionTiempo.Size = new System.Drawing.Size(153, 41);
             this.btnGraficarDerivadaSegundaFuncionTiempo.TabIndex = 8;
-            this.btnGraficarDerivadaSegundaFuncionTiempo.Text = "Graficar X\'\'(t)";
+            this.btnGraficarDerivadaSegundaFuncionTiempo.Text = "Graficar X2\'(t)";
             this.btnGraficarDerivadaSegundaFuncionTiempo.UseVisualStyleBackColor = true;
             this.btnGraficarDerivadaSegundaFuncionTiempo.Click += new System.EventHandler(this.btnGraficarDerivadaSegundaFuncionTiempo_Click);
             // 
@@ -243,7 +243,7 @@ namespace MetodosNumericos
             this.btnGraficarDerivadaSegundaFuncionX.Name = "btnGraficarDerivadaSegundaFuncionX";
             this.btnGraficarDerivadaSegundaFuncionX.Size = new System.Drawing.Size(153, 40);
             this.btnGraficarDerivadaSegundaFuncionX.TabIndex = 9;
-            this.btnGraficarDerivadaSegundaFuncionX.Text = "Graficar X\'\'(X)";
+            this.btnGraficarDerivadaSegundaFuncionX.Text = "Graficar X2\'(X1)";
             this.btnGraficarDerivadaSegundaFuncionX.UseVisualStyleBackColor = true;
             this.btnGraficarDerivadaSegundaFuncionX.Click += new System.EventHandler(this.btnGraficarDerivadaSegundaFuncionX_Click);
             // 
@@ -253,7 +253,7 @@ namespace MetodosNumericos
             this.btnGraficarDerivadaFuncionX.Name = "btnGraficarDerivadaFuncionX";
             this.btnGraficarDerivadaFuncionX.Size = new System.Drawing.Size(153, 40);
             this.btnGraficarDerivadaFuncionX.TabIndex = 10;
-            this.btnGraficarDerivadaFuncionX.Text = "Graficar X\'(X)";
+            this.btnGraficarDerivadaFuncionX.Text = "Graficar X2(X1)";
             this.btnGraficarDerivadaFuncionX.UseVisualStyleBackColor = true;
             this.btnGraficarDerivadaFuncionX.Click += new System.EventHandler(this.btnGraficarDerivadaFuncionX_Click);
             // 
@@ -263,7 +263,7 @@ namespace MetodosNumericos
             this.btnGraficarDerivadaSegundaFuncionDerivada.Name = "btnGraficarDerivadaSegundaFuncionDerivada";
             this.btnGraficarDerivadaSegundaFuncionDerivada.Size = new System.Drawing.Size(153, 40);
             this.btnGraficarDerivadaSegundaFuncionDerivada.TabIndex = 11;
-            this.btnGraficarDerivadaSegundaFuncionDerivada.Text = "Graficar X\'\'(X\')";
+            this.btnGraficarDerivadaSegundaFuncionDerivada.Text = "Graficar X2\'(X2)";
             this.btnGraficarDerivadaSegundaFuncionDerivada.UseVisualStyleBackColor = true;
             this.btnGraficarDerivadaSegundaFuncionDerivada.Click += new System.EventHandler(this.btnGraficarDerivadaSegundaFuncionDerivada_Click);
             // 
